@@ -32,7 +32,10 @@ class Story {
     <div style="opacity: 0;" id="vr-viewer">
       <div style="position: fixed; z-index: 1000; top: 20px;" id="vr-close-button">Close</div>
       <a-scene>
-  		  <a-sky src="${this.src}" rotation="0 15 0"></a-sky>
+        <a-assets>
+          <img id="anchor" src="${this.src}">
+        </a-assets>
+  		  <a-sky src="#anchor" rotation="0 15 0"></a-sky>
   		</a-scene>
     </div>
     `;
@@ -49,6 +52,7 @@ class Story {
     });
     let template = this.template();
     $(template).insertAfter(this.anchor);
+
     $('#vr-close-button').on('click', () => {
       $('#vr-viewer').css({
         opacity: 0,
@@ -63,6 +67,7 @@ class Story {
         $('#vr-viewer').remove();
       }, ANIMATION_SPEED);
     })
+
     setTimeout(() => {
       $('#vr-viewer').css({
         opacity: 1,

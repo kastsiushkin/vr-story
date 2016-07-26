@@ -98,7 +98,7 @@
 	  }, {
 	    key: 'template',
 	    value: function template() {
-	      return '\n    <div style="opacity: 0;" id="vr-viewer">\n      <div style="position: fixed; z-index: 1000; top: 20px;" id="vr-close-button">Close</div>\n      <a-scene>\n  \t\t  <a-sky src="' + this.src + '" rotation="0 15 0"></a-sky>\n  \t\t</a-scene>\n    </div>\n    ';
+	      return '\n    <div style="opacity: 0;" id="vr-viewer">\n      <div style="position: fixed; z-index: 1000; top: 20px;" id="vr-close-button">Close</div>\n      <a-scene>\n        <a-assets>\n          <img id="anchor" src="' + this.src + '">\n        </a-assets>\n  \t\t  <a-sky src="#anchor" rotation="0 15 0"></a-sky>\n  \t\t</a-scene>\n    </div>\n    ';
 	    }
 	  }, {
 	    key: 'render',
@@ -114,6 +114,7 @@
 	      });
 	      var template = this.template();
 	      (0, _jquery2.default)(template).insertAfter(this.anchor);
+
 	      (0, _jquery2.default)('#vr-close-button').on('click', function () {
 	        (0, _jquery2.default)('#vr-viewer').css({
 	          opacity: 0,
@@ -128,6 +129,7 @@
 	          (0, _jquery2.default)('#vr-viewer').remove();
 	        }, ANIMATION_SPEED);
 	      });
+
 	      setTimeout(function () {
 	        (0, _jquery2.default)('#vr-viewer').css({
 	          opacity: 1,
