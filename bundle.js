@@ -108,8 +108,8 @@
 	      var scale = Math.max(Math.ceil(window.innerWidth / anchor.width()), Math.ceil(window.innerHeight / anchor.height()));
 	      anchor.css({
 	        transform: 'translate(' + center.left + 'px, ' + center.top + 'px) scale(' + scale + ')',
-	        // filter: 'blur(3px)',
-	        // webkitFilter: 'blur(3px)',
+	        filter: 'blur(3px)',
+	        webkitFilter: 'blur(3px)',
 	        transition: 'all ' + ANIMATION_SPEED + 'ms'
 	      });
 	      var template = this.template();
