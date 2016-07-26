@@ -43,8 +43,8 @@ class Story {
     var scale = Math.max(Math.ceil(window.innerWidth / anchor.width()), Math.ceil(window.innerHeight / anchor.height()));
     anchor.css({
       transform: `translate(${center.left}px, ${center.top}px) scale(${scale})`,
-      filter: 'blur(3px)',
-      webkitFilter: 'blur(3px)',
+      filter: 'blur(1px)',
+      webkitFilter: 'blur(1px)',
       transition: `all ${ANIMATION_SPEED}ms`
     });
     let template = this.template();
@@ -52,7 +52,7 @@ class Story {
     $('#vr-close-button').on('click', () => {
       $('#vr-viewer').css({
         opacity: 0,
-        transition: `all 300ms`
+        transition: `all ${ANIMATION_SPEED}ms`
       })
       anchor.css({
         transform: `translate(0, 0) scale(1)`,
@@ -61,17 +61,14 @@ class Story {
       });
       setTimeout(() => {
         $('#vr-viewer').remove();
-      }, 300);
+      }, ANIMATION_SPEED);
     })
     setTimeout(() => {
       $('#vr-viewer').css({
         opacity: 1,
         transition: `all 500ms`
       })
-    }, ANIMATION_SPEED)
-    setTimeout(() => {
-
-    }, (ANIMATION_SPEED + 500))
+    }, ANIMATION_SPEED);
   }
 }
 

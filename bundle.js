@@ -108,8 +108,8 @@
 	      var scale = Math.max(Math.ceil(window.innerWidth / anchor.width()), Math.ceil(window.innerHeight / anchor.height()));
 	      anchor.css({
 	        transform: 'translate(' + center.left + 'px, ' + center.top + 'px) scale(' + scale + ')',
-	        filter: 'blur(3px)',
-	        webkitFilter: 'blur(3px)',
+	        filter: 'blur(1px)',
+	        webkitFilter: 'blur(1px)',
 	        transition: 'all ' + ANIMATION_SPEED + 'ms'
 	      });
 	      var template = this.template();
@@ -117,7 +117,7 @@
 	      (0, _jquery2.default)('#vr-close-button').on('click', function () {
 	        (0, _jquery2.default)('#vr-viewer').css({
 	          opacity: 0,
-	          transition: 'all 300ms'
+	          transition: 'all ' + ANIMATION_SPEED + 'ms'
 	        });
 	        anchor.css({
 	          transform: 'translate(0, 0) scale(1)',
@@ -126,7 +126,7 @@
 	        });
 	        setTimeout(function () {
 	          (0, _jquery2.default)('#vr-viewer').remove();
-	        }, 300);
+	        }, ANIMATION_SPEED);
 	      });
 	      setTimeout(function () {
 	        (0, _jquery2.default)('#vr-viewer').css({
@@ -134,7 +134,6 @@
 	          transition: 'all 500ms'
 	        });
 	      }, ANIMATION_SPEED);
-	      setTimeout(function () {}, ANIMATION_SPEED + 500);
 	    }
 	  }]);
 
