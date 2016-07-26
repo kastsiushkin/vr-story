@@ -73,7 +73,7 @@ class Story {
         opacity: 1,
         transition: `opacity ${ANIMATION_SPEED + 300}ms`
       })
-    }, 400);
+    }, 300);
   }
 }
 
