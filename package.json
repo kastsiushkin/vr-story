@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors --config ./webpack.dev.config.js --watch-poll",
     "build": "webpack --progress --colors --config ./webpack.dev.config.js",
-    "preghpages": "npm run build && rm -rf gh-pages && cp -r app gh-pages && cp index.html build/bundle.js gh-pages",
+    "preghpages": "npm run build && rm -rf gh-pages && cp -r app gh-pages && cp examples/hike.jpg examples/man.png index.html build/bundle.js gh-pages",
     "ghpages": "npm run preghpages && ghpages -p gh-pages",
     "gh-pages": "npm run ghpages"
   },
@@ -14,7 +14,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ngokevin/aframe-react-boilerplate.git"
+    "url": "git+https://github.com/kastsiushkin/vr-story.git"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
