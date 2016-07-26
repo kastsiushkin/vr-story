@@ -131,10 +131,10 @@
 	      setTimeout(function () {
 	        (0, _jquery2.default)('#vr-viewer').css({
 	          opacity: 1,
-	          transition: 'all 900ms'
+	          transition: 'all 500ms'
 	        });
 	      }, ANIMATION_SPEED);
-	      setTimeout(function () {}, ANIMATION_SPEED + 1000);
+	      setTimeout(function () {}, ANIMATION_SPEED + 500);
 	    }
 	  }]);
 

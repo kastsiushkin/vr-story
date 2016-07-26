@@ -66,12 +66,12 @@ class Story {
     setTimeout(() => {
       $('#vr-viewer').css({
         opacity: 1,
-        transition: `all 900ms`
+        transition: `all 500ms`
       })
     }, ANIMATION_SPEED)
     setTimeout(() => {
 
-    }, (ANIMATION_SPEED + 1000))
+    }, (ANIMATION_SPEED + 500))
   }
 }
 
