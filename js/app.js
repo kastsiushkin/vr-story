@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import aframe from 'aframe';
 
-const ANIMATION_SPEED = 300;
+const ANIMATION_SPEED = 500;
 
 function getCenter(element) {
   var centerScreenX = window.innerWidth / 2;
@@ -48,7 +48,7 @@ class Story {
       transform: `translate(${center.left}px, ${center.top}px) scale(${scale})`,
       filter: 'blur(1px)',
       webkitFilter: 'blur(1px)',
-      transition: `all ${ANIMATION_SPEED}ms`
+      transition: `transform ${ANIMATION_SPEED}ms`
     });
     let template = this.template();
     $(template).insertAfter(this.anchor);
@@ -56,7 +56,7 @@ class Story {
     $('#vr-close-button').on('click', () => {
       $('#vr-viewer').css({
         opacity: 0,
-        transition: `all ${ANIMATION_SPEED}ms`
+        transition: `opacity ${ANIMATION_SPEED}ms`
       })
       anchor.css({
         transform: `translate(0, 0) scale(1)`,
@@ -71,9 +71,9 @@ class Story {
     setTimeout(() => {
       $('#vr-viewer').css({
         opacity: 1,
-        transition: `all 500ms`
+        transition: `opacity ${ANIMATION_SPEED + 300}ms`
       })
-    }, ANIMATION_SPEED);
+    }, 400);
   }
 }
 

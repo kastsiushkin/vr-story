@@ -60,7 +60,7 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var ANIMATION_SPEED = 300;
+	var ANIMATION_SPEED = 500;
 
 	function getCenter(element) {
 	  var centerScreenX = window.innerWidth / 2;
@@ -110,7 +110,7 @@
 	        transform: 'translate(' + center.left + 'px, ' + center.top + 'px) scale(' + scale + ')',
 	        filter: 'blur(1px)',
 	        webkitFilter: 'blur(1px)',
-	        transition: 'all ' + ANIMATION_SPEED + 'ms'
+	        transition: 'transform ' + ANIMATION_SPEED + 'ms'
 	      });
 	      var template = this.template();
 	      (0, _jquery2.default)(template).insertAfter(this.anchor);
@@ -118,7 +118,7 @@
 	      (0, _jquery2.default)('#vr-close-button').on('click', function () {
 	        (0, _jquery2.default)('#vr-viewer').css({
 	          opacity: 0,
-	          transition: 'all ' + ANIMATION_SPEED + 'ms'
+	          transition: 'opacity ' + ANIMATION_SPEED + 'ms'
 	        });
 	        anchor.css({
 	          transform: 'translate(0, 0) scale(1)',
@@ -133,9 +133,9 @@
 	      setTimeout(function () {
 	        (0, _jquery2.default)('#vr-viewer').css({
 	          opacity: 1,
-	          transition: 'all 500ms'
+	          transition: 'opacity ' + (ANIMATION_SPEED + 300) + 'ms'
 	        });
-	      }, ANIMATION_SPEED);
+	      }, 400);
 	    }
 	  }]);
 
