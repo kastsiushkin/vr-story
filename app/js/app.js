@@ -9,6 +9,7 @@ class Story {
     this.params = window.vrStoryParams;
     this.anchor = $(this.params.anchor);
   }
+
   initEvents() {
     $(this.anchor).on('click', () => {
       this.init();
