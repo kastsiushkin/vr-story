@@ -1,33 +1,13 @@
 <!doctype HTML>
 <html>
 <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"> </script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
   <body style='margin : 0px; overflow: hidden;'>
-    <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-    <a-scene embedded arjs='debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-
-    <!-- this two following a-marker will be confused as blue image and red image patterns are very similar -->
-    <a-marker preset='custom' type="pattern" url='https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/red-pattern-marker.patt'>
-      <a-box position='0 0.5 0' material='color: red;'></a-box>
-    </a-marker>
-    <a-marker preset='custom' type="pattern" url='https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/blue-pattern-marker.patt'>
-      <a-box position='0 0.5 0' material='color: blue;'></a-box>
-    </a-marker>
-    <a-marker preset='custom' type="pattern" url='https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/green-pattern-marker.patt'>
-      <a-box position='0 0.5 0' material='color: green;'></a-box>
-    </a-marker>
-    <!-- when recognized, y-pattern-marker will show an image instead of a box -->
-    <a-marker preset='custom' type="pattern" url='https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/y-pattern-marker.patt'>
-      <a-image src="./panda.png"></a-image>
-    </a-marker>
-    <!-- I created and printed a barcode of 3x3 matrix with value of '7' with external online generator -->
-    <!-- Here I'm telling ar.js to show a yellow box when he recognize one  -->
-    <a-marker type='barcode' value='7'>
-        <a-box position='0 0.5 0' material='color: yellow;'></a-box>
-    </a-marker>
-
+    <a-scene embedded arjs>
+  	<a-marker preset="hiro">
+            <img src="./examples/hike.jpg" />
+  	</a-marker>
   	<a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
-view raw
